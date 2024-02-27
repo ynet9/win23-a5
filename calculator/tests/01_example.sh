@@ -29,3 +29,13 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+if [[ $($CALCULATOR 0 * 1) -ne 0 ]]; then
+  echo "ERROR! Multiplication by 0 returned incorrect value."
+  exit 1
+fi
+
+if [[ $($CALCULATOR 100 / 100) -ne 1 ]]; then 
+  echo "ERROR! Dividing 100 by 100 did not return the correct answer of 1."
+  exit 1 e
+fi
